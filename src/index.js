@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce';
 import fetchCountries from './fetchCountries';
 import countrylist from './templates/countrylist.hbs';
 import countryCard from "./templates/countryCard.hbs"
-import Notiflix from "notiflix";
+// import Notiflix from "notiflix";
 
 const refs ={
     inputField: document.querySelector('#search-box'),
@@ -29,7 +29,7 @@ function onInput(e){
          else{ return addCountriesList(data)
         };
 
-}).finally(debounce(clearInput, 300));
+}).finally(debounce(clearInput, DEBOUNCE_DELAY));
 }
 
 
