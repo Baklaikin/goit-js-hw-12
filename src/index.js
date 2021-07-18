@@ -22,7 +22,6 @@ function onInput(e){
   
 
   country.findCountry().then(data=>{
-      console.log(data.length)
       if(data.length===1){
        return countryCardAdd(data[0])
         }
@@ -34,17 +33,18 @@ function onInput(e){
 
 
 refs.inputField.addEventListener('input', debounce(
-    onInput, DEBOUNCE_DELAY));
+    onInput, DEBOUNCE_DELAY, {
+        leading:false,
+        trailing:true,
+    }));
 
     function addCountriesList (data){
         const markup = countrylist(data);
-        console.log(markup);
         refs.countryList.insertAdjacentHTML('beforeend', markup);
     }
 
     function countryCardAdd(data){
         const countryMarkup = countryCard(data)
-        console.log(countryMarkup);
         refs.wrapper.insertAdjacentHTML('beforeend',countryMarkup);
     }
 
