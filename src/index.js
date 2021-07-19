@@ -24,6 +24,8 @@ function onInput(e){
   country.findCountry().then(data=>{
       if(data.length===1){
        return countryCardAdd(data[0])
+        } else if(data.length>10){
+            refs.countryList.innerHTML = '';
         }
          else{ return addCountriesList(data)
         };
