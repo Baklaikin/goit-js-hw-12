@@ -21,6 +21,7 @@ export default class fetchCountries {
         .then(data=> {
             if(data.length> 10){
                Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
+               refs.countryList.innerHtml='';
             }
             return data;
         })

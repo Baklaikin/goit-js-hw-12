@@ -28,7 +28,7 @@ function onInput(e){
          else{ return addCountriesList(data)
         };
 
-}).finally(debounce(clearInput, DEBOUNCE_DELAY));
+})
 }
 
 
@@ -52,8 +52,4 @@ refs.inputField.addEventListener('input', debounce(
         refs.wrapper.innerHTML='';
         refs.countryList.innerHTML='';
         
-    }
-
-    function clearInput(){
-        refs.inputField.value = '';
     }
