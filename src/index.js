@@ -51,6 +51,7 @@ refs.inputField.addEventListener('input', debounce(
     function clearSearchResults(){
         refs.wrapper.innerHTML='';
         refs.countryList.innerHTML='';
+        
     }
 
     function clearInput(){
